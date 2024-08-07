@@ -17,7 +17,9 @@ const Dashboard = () => {
     setLoading(true);
     try {
       const res = await axiosInstance.get('/projects');
-      const sortedData = res.data.projects.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+      const sortedData = res.data.projects.sort(
+        (a, b) => new Date(b.createdAt) - new Date(a.createdAt),
+      );
       setProjects(sortedData);
       setLoading(false);
     } catch (error) {
@@ -36,20 +38,22 @@ const Dashboard = () => {
 
   const updateProject = async (id, title) => {
     try {
-      const response = await axiosInstance.put(`/project/update/${id}`, { title });
-      const result = response.data
+      const response = await axiosInstance.put(`/project/update/${id}`, {
+        title,
+      });
+      const result = response.data;
       setEditProject({ id: '', title: '' });
       setIsEditModalOpen(false);
       toast.success(result.message);
       refetch();
     } catch (error) {
-        toast.error(error.response.data.message);
+      toast.error(error.response.data.message);
     }
   };
 
   const handleCreateProject = async () => {
     try {
-      const name = localStorage.getItem("user");
+      const name = localStorage.getItem('user');
       await axiosInstance.post('/creatProject', { newProject, name: name });
       setIsCreateModalOpen(false);
       setNewProject({ title: '', description: '' });
@@ -71,12 +75,12 @@ const Dashboard = () => {
   };
   const closeEditModal = () => setIsEditModalOpen(false);
 
-  const handleLogout = async ()=>{
+  const handleLogout = async () => {
     await axiosInstance.post('/logout');
-    localStorage.removeItem('user')
+    localStorage.removeItem('user');
     Cookies.remove('jwt');
-    location.reload()
-  }
+    location.reload();
+  };
 
   return (
     <div className="flex flex-col items-center w-full min-h-screen bg-gray-100">
@@ -149,7 +153,9 @@ const Dashboard = () => {
                   <tr key={project._id} className="hover:bg-gray-100">
                     <td className="px-6 py-4 whitespace-nowrap">{index + 1}</td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <Link to={`/projects/${project._id}`}>{project.title}</Link>
+                      <Link to={`/projects/${project._id}`}>
+                        {project.title}
+                      </Link>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       {project.description}

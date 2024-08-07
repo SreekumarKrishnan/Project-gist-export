@@ -14,12 +14,10 @@ export const requireAuth = (req, res, next) => {
     jwt.verify(token, 'jwt-secret', (err, decodedToken) => {
       if (err) {
         console.log(err.message);
-        res
-          .status(500)
-          .json({
-            success: false,
-            message: 'Internal server error, Try again',
-          });
+        res.status(500).json({
+          success: false,
+          message: 'Internal server error, Try again',
+        });
       } else {
         next();
       }

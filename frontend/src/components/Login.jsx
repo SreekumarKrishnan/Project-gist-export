@@ -1,12 +1,13 @@
 import React from 'react';
-import { FaGithub } from "react-icons/fa";
+import { FaGithub } from 'react-icons/fa';
 
 const Login = ({ login }) => {
   return (
     <section className="min-h-screen px-5 lg:px-0 flex items-center">
       <div className="w-full max-w-[570px] mx-auto rounded-lg shadow-md md:p-10 text-center">
         <h3 className="text-headingColor text-[22px] leading-9 font-bold mb-10">
-          Hello! <span className="text-primaryColor">Welcome</span> to Project Maker
+          Hello! <span className="text-primaryColor">Welcome</span> to Project
+          Maker
         </h3>
 
         <div className="mt-7">

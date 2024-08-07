@@ -5,14 +5,11 @@ import connectDB from './database/connectDB.js';
 
 import userRoute from './routes/user.js';
 
-const CLIENT_ID = 'Ov23liTb7awx08y8CjLq'
-const CLIENT_SECRET = 'f0420bdde1810c35473ea7089599929924a262ed'
-
 const app = express();
 
 const corsOptions = {
   origin: 'http://localhost:5173',
-  credentials: true,    
+  credentials: true,
 };
 
 app.use(express.json());

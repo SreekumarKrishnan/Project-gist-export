@@ -9,3 +9,5 @@ Command to run backend - npm run start-dev
 
 # For acees the application, also ensure both frontent and backend rinning.
 link : http://localhost:5173
+
+# For the detailed view of project click on project title 

@@ -7,7 +7,7 @@ Command to run frontend - npm run dev
 # Enter the backend folder
 Command to run backend - npm run start-dev
 
-# To access the application, also ensure both frontend and backend rinning.
+# To access the application, also ensure both frontend and backend running.
 link: http://localhost:5173
 
 # For a detailed view of the project click on the project title 
